@@ -28,6 +28,14 @@ addEventListener("touchstart", function(event){
     }
 })
 
+addEventListener("touchmove", function(event){
+    x = event.touches[0].clientX;
+    y = event.touches[0].clientY;
+    for (var i = 0; i < lineArray.length; i++) {    
+        lineArray[i].rotation = Math.atan((x-lineArray[i].translation.x)/(y-lineArray[i].translation.y)) * -1; 
+    }
+})
+
 addEventListener("mousemove", function(event){
     x = event.clientX;
     y = event.clientY;
